@@ -1,0 +1,106 @@
+.pic {
+  border-radius: 100%;
+  border: white solid 3px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: black;
+  color: rgb(0, 255, 21);
+  text-align: center;
+}
+.address {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-grow: 1;
+  nav {
+    flex-grow: 0.5;
+  }
+}
+.topMenu {
+  display: flex;
+  direction: row;
+  flex-grow: 1;
+  list-style-type: none;
+  justify-content: space-around;
+}
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 0.1;
+}
+
+.navigation {
+  ul {
+    @extend .topMenu;
+  }
+}
+
+.about {
+  padding: 0px 30px 0px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+@mixin white-gradient {
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+$animationSpeed: 40s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	50% { transform: translateX(calc(-250px * 4.5))}
+	100% { transform: translateX(0); }
+}
+
+
+// Styling
+.skills {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	// height: 100px;
+	// margin: auto;
+	overflow: hidden;
+	position: relative;
+  width: 100%;
+  text-align: center;
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.skillList {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(250px * 9);
+    li {
+      width: 250px;
+    }
+	}
+	
+}

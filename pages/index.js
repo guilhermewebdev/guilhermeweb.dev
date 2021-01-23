@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
 import { useState } from 'react'
@@ -194,9 +194,9 @@ export default function Home() {
         />
       </Head>
       <header>
-        <address>
+        <address className={styles.address}>
           <nav>
-            <ul>
+            <ul className={styles.topMenu}>
               {socials.map(({ name, link }) => (
                 <li key={name}>
                   <a rel="noopener" target="_blank" href={link}>{name}</a>
@@ -204,22 +204,24 @@ export default function Home() {
               ))}
             </ul>
           </nav>
-          <section>
+          <section className={styles.phone}>
             <span>Telefone de contato</span>
             <a target="_blank" href="tel:22991982227">(22) 9 9198-2227</a>
           </section>
         </address>
-        <section>
-          <figure>
+        <section className={styles.title}>
+          <figure className={styles.logo}>
             {isAmp ? (
               <amp-img
                 src="/me.png"
                 width={150}
                 height={150}
                 alt={name}
+                className={styles.pic}
               />
             ) : (
                 <Image
+                  className={styles.pic}
                   src="/me.png"
                   width={150}
                   height={150}
@@ -230,7 +232,7 @@ export default function Home() {
           <h1>{name}</h1>
           <p>{slogan}</p>
         </section>
-        <nav>
+        <nav className={styles.navigation}>
           <ul>
             {menu.map(item => (
               <li key={item.name}>
@@ -241,7 +243,7 @@ export default function Home() {
         </nav>
       </header>
       <main>
-        <article id="about">
+        <article className={styles.about} id="about">
           <h2>Sobre</h2>
           <p>{about}</p>
           <article>
@@ -253,9 +255,9 @@ export default function Home() {
             <blockquote>{quote}</blockquote>
             <cite>{quoteAuthor}</cite>
           </article>
-          <article>
+          <article className={styles.skills}>
             <h3>Habilidades</h3>
-            <ul>
+            <ul className={styles.skillList}>
               {skills.map(skill => (
                 <li key={skill.name}>
                   <span>{skill.name}</span>
