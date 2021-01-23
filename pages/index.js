@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Html } from 'next/document'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
@@ -15,7 +16,7 @@ const socials = [
   },
   {
     name: 'Linkedin',
-    link: 'https://www.linkedin.com/in/guilherme-isa%C3%ADas-silva/'
+    link: 'https://www.linkedin.com/in/guilherme-isa%C2%ADas-silva/'
   },
   {
     name: 'GitHub',
@@ -41,6 +42,8 @@ const menu = [
   }
 ]
 const name = 'Guilherme Isaías'
+const description = 'Tire suas ideias do papel, desenvolvo softwares sob medida pare seu negócio'
+const keywords = 'programador; desenvolvedor; software; TI; profissional; Guilherme; Isaías; Django; Python; Docker; Sites; Site;'
 const slogan = 'Transformo ideias em software, ajudando empresas a automatizarem e melhorarem processos'
 const about = `Olá, sou Guilherme Isaías, desenvolvedor de software Full-Stack e Full-Cycle. 
               Especialista no desenvolvimento de sistemas web, e possuo experiência com a 
@@ -109,15 +112,20 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
+        <meta name="author" content="Guilherme Isaías" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{name} - Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
       </Head>
       <header>
         <address>
           <nav>
             <ul>
               {socials.map(({ name, link }) => (
-                <li>
+                <li key={name}>
                   <a rel="nofollow" href={link}>{name}</a>
                 </li>
               ))}
@@ -125,7 +133,7 @@ export default function Home() {
           </nav>
           <section>
             <span>Telefone de contato</span>
-            <a href="tel:32991982237">(32) 9 9198-2237</a>
+            <a href="tel:22991982227">(22) 9 9198-2227</a>
           </section>
         </address>
         <section>
@@ -152,7 +160,7 @@ export default function Home() {
         <nav>
           <ul>
             {menu.map(item => (
-              <li>
+              <li key={item.name}>
                 <a href={item.link}>{item.name}</a>
               </li>
             ))}
@@ -161,36 +169,36 @@ export default function Home() {
       </header>
       <main>
         <article id="about">
-          <h3>Sobre</h3>
+          <h2>Sobre</h2>
           <p>{about}</p>
-          <section>
-            <h5>Ocupação atual</h5>
+          <article>
+            <h3>Ocupação atual</h3>
             <p>{occupation}</p>
-          </section>
-          <section>
-            <h5>Citação</h5>
+          </article>
+          <article>
+            <h3>Citação</h3>
             <blockquote>{quote}</blockquote>
             <cite>{quoteAuthor}</cite>
-          </section>
-          <section>
-            <h5>Habilidades</h5>
+          </article>
+          <article>
+            <h3>Habilidades</h3>
             <ul>
               {skills.map(skill => (
-                <li>
+                <li key={skill.name}>
                   <span>{skill.name}</span>
                 </li>
               ))}
             </ul>
-          </section>
+          </article>
         </article>
         <article id="services">
-          <h3>Serviços</h3>
+          <h2>Serviços</h2>
           <ul>
             {services.map(service => (
-              <li>
+              <li key={service.name}>
                 <section>
-                  <h5>{service.name}</h5>
-                  <h6>{service.subtitle}</h6>
+                  <h3>{service.name}</h3>
+                  <h4>{service.subtitle}</h4>
                   <p>{service.description}</p>
                 </section>
               </li>
