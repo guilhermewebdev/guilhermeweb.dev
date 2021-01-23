@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import { useAmp } from 'next/amp'
 
 export const config = { amp: 'hybrid' }
 const socials = [
@@ -15,6 +16,10 @@ const socials = [
   {
     name: 'Linkedin',
     link: 'https://www.linkedin.com/in/guilherme-isa%C3%ADas-silva/'
+  },
+  {
+    name: 'GitHub',
+    link: 'https://github.com/guilhermewebdev'
   }
 ]
 const menu = [
@@ -99,10 +104,12 @@ const services = [
   }
 ]
 export default function Home() {
+  const isAmp = useAmp()
+
   return (
     <>
       <Head>
-        <title>{ name } - Web Developer</title>
+        <title>{name} - Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
@@ -123,15 +130,24 @@ export default function Home() {
         </address>
         <section>
           <figure>
-            <Image
-              src="/me.png"
-              width={150}
-              height={150}
-              alt={name}
-            />
+            {isAmp ? (
+              <amp-img
+                src="/me.png"
+                width={150}
+                height={150}
+                alt={name}
+              />
+            ) : (
+                <Image
+                  src="/me.png"
+                  width={150}
+                  height={150}
+                  alt={name}
+                />
+            )}
           </figure>
-          <h1>{ name }</h1>
-          <p>{ slogan }</p>
+          <h1>{name}</h1>
+          <p>{slogan}</p>
         </section>
         <nav>
           <ul>
