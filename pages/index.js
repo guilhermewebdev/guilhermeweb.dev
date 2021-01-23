@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
+import { useState } from 'react'
 
 export const config = { amp: 'hybrid' }
 const socials = [
@@ -129,7 +130,18 @@ const portfolio = [
 ]
 export default function Home() {
   const isAmp = useAmp()
-
+  const [form, setForm] = useState({
+    email: '',
+    name: '',
+    phone: '',
+    subject: '',
+    message: '',
+  })
+  function handlerInput(field){
+    return function(event){
+      setForm({ ...form, [field]: event.target.value })
+    }
+  }
   return (
     <>
       <Head>
@@ -240,6 +252,36 @@ export default function Home() {
             ))}
           </ul>
         </article>
+        <section id="contact">
+          <h2>Entre em contato</h2>
+          <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
+          <form action="https://dev.us10.list-manage.com/subscribe/post?u=b5756f49cfa68ec8977aa6101&amp;id=5cfba22435" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+            <ul>
+              <li>
+                <label htmlFor="mce-EMAIL">Email </label>
+                <input type="email" value={form.email} id="mce-EMAIL" name="EMAIL" onInput={handlerInput('email')} />
+              </li>
+              <li>
+                <label htmlFor="mce-NAME">Nome </label>
+                <input type="text" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
+              </li>
+              <li>
+                <label htmlFor="mce-PHONE">Telefone </label>
+                <input type="text" name="PHONE" className="" id="mce-PHONE" value={form.phone} onInput={handlerInput('phone')} />
+              </li>
+              <li>
+                <label htmlFor="mce-ASSUNTO">Assunto </label>
+                <input type="text" value={form.subject} name="ASSUNTO" id="mce-ASSUNTO" onInput={handlerInput('subject')} />
+              </li>
+              <li>
+                <label htmlFor="mce-MESSAGE">Mensagem </label>
+                <textarea type="text" value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
+              </li>
+              <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
+              <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className="button" />
+            </ul>
+          </form>
+        </section>
       </main>
     </>
   )
