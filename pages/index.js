@@ -128,6 +128,25 @@ const portfolio = [
     link: 'https://odontoseries.herokuapp.com/',
   }
 ]
+const contactAction = "https://dev.us10.list-manage.com/subscribe/post?u=b5756f49cfa68ec8977aa6101&amp;id=5cfba22435"
+const contacts = [
+  {
+    name: '(32) 9 9198-2237',
+    link: 'tel:3291982237'
+  },
+  {
+    name: 'guilherme@guilhermeweb.dev',
+    link: 'mailto:guilherme@guilhermeweb.dev',
+  },
+  {
+    name: 'WhatsApp',
+    link: 'https://api.whatsapp.com/send?phone=5532991982237'
+  },
+  {
+    name: 'WhatsApp Web',
+    link: 'https://web.whatsapp.com/send?phone=5532991982237'
+  }
+]
 export default function Home() {
   const isAmp = useAmp()
   const [form, setForm] = useState({
@@ -137,8 +156,8 @@ export default function Home() {
     subject: '',
     message: '',
   })
-  function handlerInput(field){
-    return function(event){
+  function handlerInput(field) {
+    return function (event) {
       setForm({ ...form, [field]: event.target.value })
     }
   }
@@ -159,14 +178,14 @@ export default function Home() {
             <ul>
               {socials.map(({ name, link }) => (
                 <li key={name}>
-                  <a rel="nofollow" href={link}>{name}</a>
+                  <a rel="nofollow" target="_blank" href={link}>{name}</a>
                 </li>
               ))}
             </ul>
           </nav>
           <section>
             <span>Telefone de contato</span>
-            <a href="tel:22991982227">(22) 9 9198-2227</a>
+            <a target="_blank" href="tel:22991982227">(22) 9 9198-2227</a>
           </section>
         </address>
         <section>
@@ -246,7 +265,7 @@ export default function Home() {
                 <section>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <a rel="nofollow" href={item.link}>Conhecer</a>
+                  <a target="_blank" rel="nofollow" href={item.link}>Conhecer</a>
                 </section>
               </li>
             ))}
@@ -255,7 +274,7 @@ export default function Home() {
         <section id="contact">
           <h2>Entre em contato</h2>
           <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
-          <form action="https://dev.us10.list-manage.com/subscribe/post?u=b5756f49cfa68ec8977aa6101&amp;id=5cfba22435" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+          <form action={contactAction} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
             <ul>
               <li>
                 <label htmlFor="mce-EMAIL">Email </label>
@@ -282,6 +301,39 @@ export default function Home() {
             </ul>
           </form>
         </section>
+        <footer>
+          <nav>
+            <h2>Menu</h2>
+            <ul>
+              {menu.map(item => (
+                <li>
+                  <a href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav>
+            <h2>Redes Sociais</h2>
+            <ul>
+              {socials.map(item => (
+                <li>
+                  <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav>
+            <h2>Contatos</h2>
+            <ul>
+              {contacts.map(item => (
+                <li>
+                  <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <small>Copyright &copy; {new Date().getFullYear()} - {name}</small>
+        </footer>
       </main>
     </>
   )
