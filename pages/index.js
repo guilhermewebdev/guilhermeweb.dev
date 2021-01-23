@@ -274,7 +274,7 @@ export default function Home() {
         <section id="contact">
           <h2>Entre em contato</h2>
           <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
-          <form action={contactAction} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+          <form action={contactAction} action-xhr={contactAction} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
             <ul>
               <li>
                 <label htmlFor="mce-EMAIL">Email </label>
@@ -294,7 +294,7 @@ export default function Home() {
               </li>
               <li>
                 <label htmlFor="mce-MESSAGE">Mensagem </label>
-                <textarea type="text" value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
+                <textarea value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
               </li>
               <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
               <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className="button" />
