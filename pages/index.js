@@ -156,6 +156,8 @@ export default function Home() {
     subject: '',
     message: '',
   })
+  const actionType = isAmp ? 'action-xhr' : 'action'
+  const formAttr = { [actionType]: contactAction }
   function handlerInput(field) {
     return function (event) {
       setForm({ ...form, [field]: event.target.value })
@@ -166,7 +168,7 @@ export default function Home() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="author" content="Guilherme Isaías" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
         <title>{name} - Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
@@ -274,7 +276,7 @@ export default function Home() {
         <section id="contact">
           <h2>Entre em contato</h2>
           <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
-          <form action={contactAction} action-xhr={contactAction} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+          <form {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
             <ul>
               <li>
                 <label htmlFor="mce-EMAIL">Email </label>
