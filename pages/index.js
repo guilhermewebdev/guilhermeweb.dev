@@ -301,40 +301,40 @@ export default function Home() {
             </ul>
           </form>
         </section>
-        <footer>
-          <nav>
-            <h2>Menu</h2>
-            <ul>
-              {menu.map(item => (
-                <li>
-                  <a href={item.link}>{item.name}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav>
-            <h2>Redes Sociais</h2>
-            <ul>
-              {socials.map(item => (
-                <li>
-                  <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav>
-            <h2>Contatos</h2>
-            <ul>
-              {contacts.map(item => (
-                <li>
-                  <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <small>Copyright &copy; {new Date().getFullYear()} - {name}</small>
-        </footer>
       </main>
+      <footer>
+        <nav>
+          <h2>Menu</h2>
+          <ul>
+            {menu.map(item => (
+              <li>
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav>
+          <h2>Redes Sociais</h2>
+          <ul>
+            {socials.map(item => (
+              <li>
+                <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav>
+          <h2>Contatos</h2>
+          <ul>
+            {contacts.map(item => (
+              <li>
+                <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <small>Copyright &copy; {new Date().getFullYear()} - {name}</small>
+      </footer>
     </>
   )
 }
