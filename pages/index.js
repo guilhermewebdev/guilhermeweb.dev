@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Html } from 'next/document'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
@@ -106,6 +105,28 @@ const services = [
     description: 'Manutenção em sistemas, implementação de novas funcionalidades ou reparo em problemas técnicos de funcionamento, performance ou segurança'
   }
 ]
+const portfolio = [
+  {
+    title: 'Duda Modas',
+    description: 'E-commerce voltado para moda feminina',
+    link: 'https://dudamodas.net/'
+  },
+  {
+    title: 'Arbitrium',
+    description: 'Micro Framework para criação de aplicações web',
+    link: 'https://github.com/guilhermewebdev/arbitrium'
+  },
+  {
+    title: 'Django Login',
+    description: 'Interface elegante utilizando Django e React',
+    link: 'https://github.com/guilhermewebdev/django-login'
+  },
+  {
+    title: 'Odontoseries',
+    description: 'Plataforma online de cursos para dentistas',
+    link: 'https://odontoseries.herokuapp.com/',
+  }
+]
 export default function Home() {
   const isAmp = useAmp()
 
@@ -152,7 +173,7 @@ export default function Home() {
                   height={150}
                   alt={name}
                 />
-            )}
+              )}
           </figure>
           <h1>{name}</h1>
           <p>{slogan}</p>
@@ -200,6 +221,20 @@ export default function Home() {
                   <h3>{service.name}</h3>
                   <h4>{service.subtitle}</h4>
                   <p>{service.description}</p>
+                </section>
+              </li>
+            ))}
+          </ul>
+        </article>
+        <article id="portfolio">
+          <h2>Portfólio</h2>
+          <ul>
+            {portfolio.map(item => (
+              <li key={item.title}>
+                <section>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <a rel="nofollow" href={item.link}>Conhecer</a>
                 </section>
               </li>
             ))}
