@@ -217,7 +217,7 @@ export default function Home() {
           </nav>
           <section className={styles.phone}>
             <span>Telefone de contato</span>
-            <a target="_blank" href="tel:22991982227">(22) 9 9198-2227</a>
+            <a target="_blank" href="tel:32991982227">(32) 9 9198-2227</a>
           </section>
         </address>
         <section className={styles.title}>
