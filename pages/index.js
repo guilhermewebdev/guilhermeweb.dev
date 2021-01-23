@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const config = { amp: 'hybrid' }
 const socials = [
@@ -44,7 +44,7 @@ const menu = [
 const name = 'Guilherme Isaías'
 const description = 'Tire suas ideias do papel, desenvolvo softwares sob medida pare seu negócio'
 const keywords = 'programador; desenvolvedor; software; TI; profissional; Guilherme; Isaías; Django; Python; Docker; Sites; Site;'
-const slogan = 'Transformo ideias em software, ajudando empresas a automatizarem e melhorarem processos'
+const slogan = 'Transformo ideias em software, ajudando empresas a automatizarem e melhorarem processos.'
 const about = `Olá, sou Guilherme Isaías, desenvolvedor de software Full-Stack e Full-Cycle. 
               Especialista no desenvolvimento de sistemas web, e possuo experiência com a 
               criação de plataformas, lojas virtuais, automação comercial, entre outros. 
@@ -171,6 +171,7 @@ export default function Home() {
     subject: '',
     message: '',
   })
+  const [typewriter, digit] = useState(slogan);
   const actionType = isAmp ? 'action-xhr' : 'action'
   const formAttr = { [actionType]: contactAction }
   function handlerInput(field) {
@@ -178,6 +179,15 @@ export default function Home() {
       setForm({ ...form, [field]: event.target.value })
     }
   }
+  useEffect(() => {
+    const list = slogan.split('');
+    list.reduce((previous, current, index) => {
+      setTimeout(() => {
+        digit(previous + current + (index%2 == 0 ? '_' : ''))
+      }, index * 90);
+      return previous + current;
+    }, '')
+  }, [])
   return (
     <>
       <Head>
@@ -230,7 +240,10 @@ export default function Home() {
               )}
           </figure>
           <h1>{name}</h1>
-          <p>{slogan}</p>
+          <p className={styles.slogan}>
+            <span>{typewriter}</span>
+            <i className={styles.cursor}></i>
+          </p>
         </section>
         <nav className={styles.navigation}>
           <ul>
