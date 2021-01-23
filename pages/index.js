@@ -180,7 +180,7 @@ export default function Home() {
             <ul>
               {socials.map(({ name, link }) => (
                 <li key={name}>
-                  <a rel="nofollow" target="_blank" href={link}>{name}</a>
+                  <a rel="noopener" target="_blank" href={link}>{name}</a>
                 </li>
               ))}
             </ul>
@@ -267,7 +267,7 @@ export default function Home() {
                 <section>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <a target="_blank" rel="nofollow" href={item.link}>Conhecer</a>
+                  <a target="_blank" rel="noopener" href={item.link}>Conhecer</a>
                 </section>
               </li>
             ))}
@@ -298,9 +298,9 @@ export default function Home() {
                 <label htmlFor="mce-MESSAGE">Mensagem </label>
                 <textarea value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
               </li>
-              <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
-              <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className="button" />
             </ul>
+            <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
+            <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className="button" />
           </form>
         </section>
       </main>
@@ -320,7 +320,7 @@ export default function Home() {
           <ul>
             {socials.map(item => (
               <li>
-                <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+                <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
               </li>
             ))}
           </ul>
@@ -330,7 +330,7 @@ export default function Home() {
           <ul>
             {contacts.map(item => (
               <li>
-                <a rel="nofollow" target="_blank" href={item.link}>{item.name}</a>
+                <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
               </li>
             ))}
           </ul>
