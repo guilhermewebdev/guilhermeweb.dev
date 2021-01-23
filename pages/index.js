@@ -76,6 +76,28 @@ const skills = [
     name: 'Linux',
   }
 ]
+const services = [
+  {
+    name: 'Aplicativos',
+    subtitle: 'Nativos e PWA',
+    description: 'Desenvolvimento de aplicativos nativos para IOS, Android, Smart TVs e PWAs utilizando JavaScript'
+  },
+  {
+    name: 'Sites',
+    subtitle: 'SEO e Performance super otimizados',
+    description: 'Desenvolvimento de sites ultra performáticos e seguros, como E-Commerces, Blogs, Landing Pages entre outros'
+  },
+  {
+    name: 'Plataformas',
+    subtitle: 'Plataformas web de alta escalabilidade',
+    description: 'Desenvolvimento de plataformas completas, para administração e automação empresarial ou implementação de ideias'
+  },
+  {
+    name: 'Manutenção',
+    subtitle: 'Foco na resolução de problemas',
+    description: 'Manutenção em sistemas, implementação de novas funcionalidades ou reparo em problemas técnicos de funcionamento, performance ou segurança'
+  }
+]
 export default function Home() {
   return (
     <>
@@ -100,12 +122,14 @@ export default function Home() {
           </section>
         </address>
         <section>
-          <Image
-            src="/me.png"
-            width={125}
-            height={125}
-            alt={name}
-          />
+          <figure>
+            <Image
+              src="/me.png"
+              width={150}
+              height={150}
+              alt={name}
+            />
+          </figure>
           <h1>{ name }</h1>
           <p>{ slogan }</p>
         </section>
@@ -120,7 +144,7 @@ export default function Home() {
         </nav>
       </header>
       <main>
-        <section id="about">
+        <article id="about">
           <h3>Sobre</h3>
           <p>{about}</p>
           <section>
@@ -142,7 +166,21 @@ export default function Home() {
               ))}
             </ul>
           </section>
-        </section>
+        </article>
+        <article id="services">
+          <h3>Serviços</h3>
+          <ul>
+            {services.map(service => (
+              <li>
+                <section>
+                  <h5>{service.name}</h5>
+                  <h6>{service.subtitle}</h6>
+                  <p>{service.description}</p>
+                </section>
+              </li>
+            ))}
+          </ul>
+        </article>
       </main>
     </>
   )
