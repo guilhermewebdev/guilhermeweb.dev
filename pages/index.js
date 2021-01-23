@@ -184,7 +184,7 @@ export default function Home() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
-        digit(previous + current + (index%2 == 0 ? ' _' : '  '))
+        digit(previous + current + (index%2 == 0 ? '█' : '  '))
       }, index * 50);
       return previous + current;
     }, '')
@@ -241,10 +241,7 @@ export default function Home() {
               )}
           </figure>
           <h1 className={styles.name}>{name}</h1>
-          <p className={styles.slogan}>
-            <span>{typewriter}</span>
-            <i className={styles.cursor}></i>
-          </p>
+          <p className={styles.slogan}>{typewriter}</p>
         </section>
         <nav className={styles.navigation}>
           <ul>
