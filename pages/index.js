@@ -147,6 +147,21 @@ const contacts = [
     link: 'https://web.whatsapp.com/send?phone=5532991982237'
   }
 ]
+const structuredData = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Barbacena",
+    addressRegion: "MG",
+  },
+  email: "mailto:guilherme@guilhermeweb.dev",
+  image: "me.png",
+  jobTitle: "Programmer",
+  name: name,
+  telephone: "+55 (32) 9 9198-2237",
+  url: "https://guilhermeweb.dev"
+}
 export default function Home() {
   const isAmp = useAmp()
   const [form, setForm] = useState({
@@ -173,6 +188,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
       <header>
         <address>
@@ -309,7 +328,7 @@ export default function Home() {
           <h2>Menu</h2>
           <ul>
             {menu.map(item => (
-              <li>
+              <li key={item.name}>
                 <a href={item.link}>{item.name}</a>
               </li>
             ))}
@@ -319,7 +338,7 @@ export default function Home() {
           <h2>Redes Sociais</h2>
           <ul>
             {socials.map(item => (
-              <li>
+              <li key={item.name}>
                 <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
               </li>
             ))}
@@ -329,7 +348,7 @@ export default function Home() {
           <h2>Contatos</h2>
           <ul>
             {contacts.map(item => (
-              <li>
+              <li key={item.name}>
                 <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
               </li>
             ))}
