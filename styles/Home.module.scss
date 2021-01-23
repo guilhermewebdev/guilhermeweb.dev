@@ -1,6 +1,10 @@
 .pic {
   border-radius: 100%;
   border: white solid 3px;
+  transition-duration: 1s;
+}
+.pic:hover {
+  transform: scale(1.1);
 }
 .title {
   display: flex;
@@ -12,6 +16,8 @@
   text-align: center;
   padding: 40px 0px;
 }
+
+
 
 .slogan {
   display: flex;
@@ -117,4 +123,10 @@ $animationSpeed: 40s;
       width: 250px;
     }
   }
+}
+
+
+.name {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(0, 255, 0);
 }

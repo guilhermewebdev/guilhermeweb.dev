@@ -240,7 +240,7 @@ export default function Home() {
                 />
               )}
           </figure>
-          <h1>{name}</h1>
+          <h1 className={styles.name}>{name}</h1>
           <p className={styles.slogan}>
             <span>{typewriter}</span>
             <i className={styles.cursor}></i>
