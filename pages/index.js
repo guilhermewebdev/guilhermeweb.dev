@@ -162,6 +162,7 @@ const structuredData = {
   telephone: "+55 (32) 9 9198-2237",
   url: "https://guilhermeweb.dev"
 }
+
 export default function Home() {
   const isAmp = useAmp()
   const [form, setForm] = useState({
@@ -183,8 +184,8 @@ export default function Home() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
-        digit(previous + current + (index%2 == 0 ? '_' : ' '))
-      }, index * 60);
+        digit(previous + current + (index%2 == 0 ? ' _' : '  '))
+      }, index * 50);
       return previous + current;
     }, '')
   }, [])
