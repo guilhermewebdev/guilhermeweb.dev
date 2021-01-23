@@ -183,8 +183,8 @@ export default function Home() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
-        digit(previous + current + (index%2 == 0 ? '_' : ''))
-      }, index * 90);
+        digit(previous + current + (index%2 == 0 ? '_' : ' '))
+      }, index * 60);
       return previous + current;
     }, '')
   }, [])
