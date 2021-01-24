@@ -14,7 +14,7 @@
   background-color: black;
   color: rgb(0, 255, 0);
   text-align: center;
-  padding: 40px 0px;
+  padding: 40px 10px;
 }
 
 @mixin virtualSquareBottom {
@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: center;
   font-family: monospace;
   font-size: 15px;
 }
@@ -56,24 +56,29 @@
 .address {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
+  flex-wrap: wrap;
   nav {
-    flex-grow: 0.5;
+    flex-grow: 1;
   }
 }
 .topMenu {
   display: flex;
   direction: row;
   flex-grow: 1;
+  padding: 5px;
   list-style-type: none;
+  text-transform: capitalize;
   justify-content: space-around;
-}
-.phone {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 0.1;
+  flex-wrap: wrap;
+  max-width: 100%;
+  text-align: center;
+  li {
+    min-width: 100px;
+  }
 }
 
 .navigation {
@@ -97,9 +102,19 @@
   .occupation {
     text-align: right;
   }
+  @media screen and (max-width: 600px) {
+    section {
+      padding: 0px 30px;
+      width: 100%;
+      min-width: 300px;
+    }
+    .occupation {
+      text-align: left;
+    }
+  }
 }
 .aboutMe {
-  padding: 30px;
+  padding: 0px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +137,6 @@ $skillsCount: 10;
 // Styling
 .skills {
   background: white;
-  // box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -160,6 +174,9 @@ $skillsCount: 10;
   flex-wrap: wrap;
   flex-grow: 1;
   width: 100%;
+  nav {
+    min-width: 300px;
+  }
 }
 .footer {
   display: flex;
@@ -181,6 +198,7 @@ $skillsCount: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: left;
   ul {
     list-style-type: none;
     padding: 0;
@@ -193,6 +211,7 @@ $skillsCount: 10;
       display: flex;
       flex-direction: column;
       width: 50%;
+      min-width: 300px;
       padding: 25px;
       position: relative;
       textarea {
@@ -223,6 +242,11 @@ $skillsCount: 10;
   color: rgb(0, 255, 0);
   font-family: monospace;
   padding: 40px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
@@ -277,18 +301,21 @@ $skillsCount: 10;
   ul {
     list-style-type: none;
     flex-wrap: wrap;
+    padding: 0px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     display: flex;
     li {
       min-width: 300px;
       width: 40%;
-      margin: 20px;
+      margin: 20px 10px;
       padding: 0px;
       position: relative;
       section {
         padding: 20px;
         border: 2px solid rgb(0, 255, 0);
+        width: 100%;
+        height: 100%;
         h3 {
           margin-top: 0px;
         }

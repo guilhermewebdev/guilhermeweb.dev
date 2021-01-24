@@ -22,6 +22,14 @@ const socials = [
   {
     name: 'GitHub',
     link: 'https://github.com/guilhermewebdev'
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com/GuilhermeWebDev'
+  },
+  {
+    name: 'Telefone: (32) 9 9198-2237',
+    link: 'tel:32 9 9198 2237'
   }
 ]
 const menu = [
@@ -212,7 +220,7 @@ export default function Home() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="author" content="Guilherme Isaías" />
-        {isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
+        {!isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
         <title>{name} - Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
@@ -233,10 +241,6 @@ export default function Home() {
               ))}
             </ul>
           </nav>
-          <section className={styles.phone}>
-            <span>Telefone de contato</span>
-            <a target="_blank" href="tel:32991982227">(32) 9 9198-2227</a>
-          </section>
         </address>
         <section className={styles.title}>
           <figure className={styles.logo}>
