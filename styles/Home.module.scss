@@ -139,7 +139,7 @@ $skillsCount: 10;
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(calc(250px * -#{$skillsCount}/ 2));
+    transform: translateX(-100%);
   }
 }
 
@@ -150,17 +150,24 @@ $skillsCount: 10;
   position: relative;
   width: 100%;
   text-align: center;
+  section {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    position: relative;
+  }
   .skillList {
     list-style-type: none;
     display: flex;
+    padding: 0px;
     width: auto;
     position: relative;
+    animation: scroll $animationSpeed linear infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
     li {
-      animation: scroll $animationSpeed ease-in-out infinite;
-      animation-direction: alternate;
-      animation-fill-mode: forwards;
-      width: 250px;
       transition-duration: 1s;
+      width: 250px;
       z-index: 99;
     }
 

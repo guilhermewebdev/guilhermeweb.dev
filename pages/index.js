@@ -201,6 +201,32 @@ export default function Home() {
   const [typewriter, digit] = useState(slogan);
   const actionType = isAmp ? 'action-xhr' : 'action'
   const formAttr = { [actionType]: contactAction }
+  const skillsComponent = (
+    <ul className={styles.skillList}>
+      {skills.map(skill => (
+        <li key={skill.name}>
+          <figure>
+            {isAmp ? (
+              <amp-img
+                src={skill.icon}
+                width={150}
+                height={150}
+                alt={name}
+              />
+            ) : (
+                <img
+                  src={skill.icon}
+                  width={150}
+                  height={150}
+                  alt={name}
+                />
+              )}
+            <figcaption>{skill.name}</figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  )
   function handlerInput(field) {
     return function (event) {
       setForm({ ...form, [field]: event.target.value })
@@ -296,30 +322,10 @@ export default function Home() {
           </article>
           <article id="skills" className={styles.skills}>
             <h3>Habilidades</h3>
-            <ul className={styles.skillList}>
-              {skills.map(skill => (
-                <li key={skill.name}>
-                  <figure>
-                    {isAmp ? (
-                      <amp-img
-                        src={skill.icon}
-                        width={150}
-                        height={150}
-                        alt={name}
-                      />
-                    ) : (
-                        <img
-                          src={skill.icon}
-                          width={150}
-                          height={150}
-                          alt={name}
-                        />
-                      )}
-                    <figcaption>{skill.name}</figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
+            <section>
+              {skillsComponent}
+              {skillsComponent}
+            </section>
           </article>
         </article>
         <article className={styles.portfolio} id="portfolio">
