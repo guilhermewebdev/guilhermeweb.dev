@@ -59,30 +59,39 @@ const quoteAuthor = 'Stephen Hawking'
 const skills = [
   {
     name: 'Python',
+    icon: "https://img.icons8.com/color/150/000000/python.png"
   },
   {
-    name: 'Django'
+    name: 'Django',
+    icon: "https://img.icons8.com/color/150/000000/django.png",
   },
   {
-    name: 'Docker'
+    name: 'Docker',
+    icon: "https://img.icons8.com/color/150/000000/docker.png",
   },
   {
-    name: 'JavaScript / Typescript'
+    name: 'JavaScript / Typescript',
+    icon: "https://img.icons8.com/color/150/000000/typescript.png",
   },
   {
-    name: 'React.js / React Native'
+    name: 'React.js / React Native',
+    icon: "https://img.icons8.com/officel/150/000000/react.png",
   },
   {
-    name: 'Node.js'
+    name: 'Node.js',
+    icon: "https://img.icons8.com/color/150/000000/nodejs.png",
   },
   {
-    name: 'DevOps / FullCycle'
+    name: 'DevOps / FullCycle',
+    icon: "https://img.icons8.com/color/150/000000/settings-3--v1.png"
   },
   {
-    name: 'Computação em núvem'
+    name: 'Computação em núvem',
+    icon: "https://img.icons8.com/fluent/150/000000/cloud.png",
   },
   {
     name: 'Linux',
+    icon: "https://img.icons8.com/color/150/000000/linux.png",
   }
 ]
 const services = [
@@ -273,7 +282,24 @@ export default function Home() {
             <ul className={styles.skillList}>
               {skills.map(skill => (
                 <li key={skill.name}>
-                  <span>{skill.name}</span>
+                  <figure>
+                    {isAmp ? (
+                      <amp-img
+                        src={skill.icon}
+                        width={150}
+                        height={150}
+                        alt={name}
+                      />
+                    ) : (
+                        <img
+                          src={skill.icon}
+                          width={150}
+                          height={150}
+                          alt={name}
+                        />
+                      )}
+                    <figcaption>{skill.name}</figcaption>
+                  </figure>
                 </li>
               ))}
             </ul>

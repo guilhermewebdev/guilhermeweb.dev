@@ -117,6 +117,7 @@ $animationSpeed: 40s;
 
   .skillList {
     animation: scroll $animationSpeed linear infinite;
+    list-style-type: none;
     display: flex;
     width: calc(250px * 9);
     li {
