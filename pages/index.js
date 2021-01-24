@@ -248,6 +248,7 @@ export default function Home() {
         <meta name="author" content="Guilherme Isaías" />
         {!isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
         <title>{name} - Web Developer</title>
+        <link rel="shortcut icon" href="/favicon.png" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
@@ -336,7 +337,7 @@ export default function Home() {
                 <section>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <a target="_blank" rel="noopener" href={item.link}>> Conhecer</a>
+                  <a target="_blank" rel="noopener" href={item.link}>{'>'} Conhecer</a>
                 </section>
               </li>
             ))}
