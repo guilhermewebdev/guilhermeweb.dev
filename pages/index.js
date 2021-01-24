@@ -288,7 +288,9 @@ export default function Home() {
             </section>
             <section className={styles.quote}>
               <h3>Citação</h3>
-              <blockquote>{quote}</blockquote>
+              <blockquote>
+                <q cite={quoteAuthor}>{quote}</q>
+              </blockquote>
               <cite>{quoteAuthor}</cite>
             </section>
           </article>
