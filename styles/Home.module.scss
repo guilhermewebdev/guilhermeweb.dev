@@ -301,6 +301,10 @@ $skillsCount: 10;
       box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.308);
       padding: 20px;
       border-radius: 20px;
+      transition-duration: 1s;
+    }
+    li:hover {
+      transform: scale(1.05);
     }
   }
 }
@@ -327,6 +331,7 @@ $skillsCount: 10;
       margin: 20px 10px;
       padding: 0px;
       position: relative;
+      transition-duration: 1s;
       section {
         padding: 20px;
         border: 2px solid rgb(0, 255, 0);
@@ -335,6 +340,9 @@ $skillsCount: 10;
         h3 {
           margin-top: 0px;
         }
+      }
+      &:hover {
+        transform: scale(1.05);
       }
       section::before {
         @include virtualSquareBottom();
