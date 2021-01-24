@@ -5,6 +5,7 @@ import { useAmp } from 'next/amp'
 import { useEffect, useState } from 'react'
 
 export const config = { amp: 'hybrid' }
+
 const socials = [
   {
     name: 'Facebook',
@@ -16,7 +17,7 @@ const socials = [
   },
   {
     name: 'Linkedin',
-    link: 'https://www.linkedin.com/in/guilherme-isa%C2%ADas-silva/'
+    link: 'https://www.linkedin.com/in/guilherme-isaías-silva/'
   },
   {
     name: 'GitHub',
@@ -253,6 +254,7 @@ export default function Home() {
           </ul>
         </nav>
       </header>
+      <hr />
       <main>
         <article className={styles.about} id="about">
           <h2>Sobre</h2>
@@ -306,8 +308,8 @@ export default function Home() {
           </ul>
         </article>
         <section className={styles.contact} id="contact">
-          <h2>Entre em contato</h2>
-          <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
+          <h2 className={styles.name}>Entre em contato</h2>
+          <p>Solicite orçamentos ou tire suas dúvidas, responderei o mais rápido possível!</p>
           <form className={styles.contactForm} {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
             <ul>
               <li>
@@ -336,7 +338,6 @@ export default function Home() {
           </form>
         </section>
       </main>
-      <hr></hr>
       <footer className={styles.footer}>
         <section className={styles.navs}>
           <nav>
