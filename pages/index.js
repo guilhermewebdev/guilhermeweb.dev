@@ -184,7 +184,7 @@ export default function Home() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
-        digit(previous + current + (index%2 == 0 ? '█' : '  '))
+        digit(previous + current + (index % 2 == 0 ? '█' : '  '))
       }, index * 50);
       return previous + current;
     }, '')
@@ -336,37 +336,40 @@ export default function Home() {
           </form>
         </section>
       </main>
-      <footer>
-        <nav>
-          <h2>Menu</h2>
-          <ul>
-            {menu.map(item => (
-              <li key={item.name}>
-                <a href={item.link}>{item.name}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav>
-          <h2>Redes Sociais</h2>
-          <ul>
-            {socials.map(item => (
-              <li key={item.name}>
-                <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav>
-          <h2>Contatos</h2>
-          <ul>
-            {contacts.map(item => (
-              <li key={item.name}>
-                <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      <hr></hr>
+      <footer className={styles.footer}>
+        <section className={styles.navs}>
+          <nav>
+            <h2>Menu</h2>
+            <ul className={styles.verticalMenu}>
+              {menu.map(item => (
+                <li key={item.name}>
+                  <a href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav>
+            <h2>Redes Sociais</h2>
+            <ul className={styles.verticalMenu}>
+              {socials.map(item => (
+                <li key={item.name}>
+                  <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav>
+            <h2>Contatos</h2>
+            <ul className={styles.verticalMenu}>
+              {contacts.map(item => (
+                <li key={item.name}>
+                  <a rel="noopener" target="_blank" href={item.link}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </section>
         <small>Copyright &copy; {new Date().getFullYear()} - {name}</small>
       </footer>
     </>
