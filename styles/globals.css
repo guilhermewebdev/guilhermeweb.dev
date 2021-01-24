@@ -15,6 +15,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition-duration: 500ms;
+}
+a:hover {
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.733);
+  transform: scale(2);
 }
 
 * {
