@@ -313,7 +313,7 @@ export default function Home() {
             </ul>
           </article>
         </article>
-        <article id="services">
+        <article className={styles.services} id="services">
           <h2>Serviços</h2>
           <ul>
             {services.map(service => (
