@@ -318,7 +318,7 @@ export default function Home() {
               </li>
               <li>
                 <label htmlFor="mce-NAME">Nome:</label>
-                <input required type="t  ext" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
+                <input required type="text" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
               </li>
               <li>
                 <label htmlFor="mce-PHONE">Telefone:</label>
