@@ -120,8 +120,13 @@ $animationSpeed: 40s;
     list-style-type: none;
     display: flex;
     width: calc(250px * 9);
+
     li {
       width: 250px;
+      transition-duration: 1s;
+    }
+    li:hover {
+      transform: scale(1.2);
     }
   }
 }
@@ -180,7 +185,7 @@ $animationSpeed: 40s;
         outline: none;
         padding: 8px;
         font-family: courier new;
-    }
+      }
       input {
         flex-grow: 1;
         background-color: black;
