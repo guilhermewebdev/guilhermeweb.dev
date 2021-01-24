@@ -93,12 +93,17 @@
   flex-direction: row;
   flex-grow: 1;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  margin: auto;
   justify-content: space-around;
   section {
     width: 45%;
     min-width: 300px;
+    blockquote {
+      margin: 10px 0px;
+    }
   }
+  max-width: 1000px;
   .occupation {
     text-align: right;
   }
@@ -116,9 +121,13 @@
 .aboutMe {
   padding: 0px 30px;
   display: flex;
+  text-align: justify;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  p {
+    max-width: 1000px;
+  }
 }
 
 $animationSpeed: 20s;
