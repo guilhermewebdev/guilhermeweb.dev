@@ -305,34 +305,34 @@ export default function Home() {
             ))}
           </ul>
         </article>
-        <section id="contact">
+        <section className={styles.contact} id="contact">
           <h2>Entre em contato</h2>
           <p>Entre em contato para solicitar orçamentos ou tirar suas dúvidas, responderei o mais rápido possível</p>
-          <form {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
+          <form className={styles.contactForm} {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
             <ul>
               <li>
-                <label htmlFor="mce-EMAIL">Email </label>
-                <input type="email" value={form.email} id="mce-EMAIL" name="EMAIL" onInput={handlerInput('email')} />
+                <label htmlFor="mce-EMAIL">Email:</label>
+                <input required type="email" value={form.email} id="mce-EMAIL" name="EMAIL" onInput={handlerInput('email')} />
               </li>
               <li>
-                <label htmlFor="mce-NAME">Nome </label>
-                <input type="text" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
+                <label htmlFor="mce-NAME">Nome:</label>
+                <input required type="t  ext" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
               </li>
               <li>
-                <label htmlFor="mce-PHONE">Telefone </label>
+                <label htmlFor="mce-PHONE">Telefone:</label>
                 <input type="text" name="PHONE" className="" id="mce-PHONE" value={form.phone} onInput={handlerInput('phone')} />
               </li>
               <li>
-                <label htmlFor="mce-ASSUNTO">Assunto </label>
-                <input type="text" value={form.subject} name="ASSUNTO" id="mce-ASSUNTO" onInput={handlerInput('subject')} />
+                <label htmlFor="mce-ASSUNTO">Assunto:</label>
+                <input required type="text" value={form.subject} name="ASSUNTO" id="mce-ASSUNTO" onInput={handlerInput('subject')} />
               </li>
               <li>
-                <label htmlFor="mce-MESSAGE">Mensagem </label>
-                <textarea value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
+                <label htmlFor="mce-MESSAGE">Mensagem:</label>
+                <textarea required value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
               </li>
             </ul>
             <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
-            <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className="button" />
+            <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className={styles.button} />
           </form>
         </section>
       </main>
