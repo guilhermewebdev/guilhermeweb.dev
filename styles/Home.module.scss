@@ -70,18 +70,16 @@
   );
 }
 
-$animationSpeed: 40s;
+$animationSpeed: 20s;
+$skillsCount: 11;
 
 // Animation
 @keyframes scroll {
   0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(calc(-250px * 4.5));
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(calc(250px * -#{$skillsCount}/2));
   }
 }
 
@@ -116,15 +114,18 @@ $animationSpeed: 40s;
   }
 
   .skillList {
-    animation: scroll $animationSpeed linear infinite;
     list-style-type: none;
     display: flex;
-    width: calc(250px * 9);
-
+    width: auto;
+    position: relative;
     li {
+      animation: scroll $animationSpeed ease-in-out infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
       width: 250px;
       transition-duration: 1s;
     }
+
     li:hover {
       transform: scale(1.2);
     }

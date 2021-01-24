@@ -92,6 +92,14 @@ const skills = [
   {
     name: 'Linux',
     icon: "https://img.icons8.com/color/150/000000/linux.png",
+  },
+  {
+    name: 'Git',
+    icon: "https://img.icons8.com/color/150/000000/git.png"
+  },
+  {
+    name: 'Sass',
+    icon: "https://img.icons8.com/color/150/000000/sass.png"
   }
 ]
 const services = [
