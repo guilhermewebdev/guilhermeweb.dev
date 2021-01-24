@@ -17,7 +17,7 @@
   padding: 40px 0px;
 }
 
-@mixin virtualSquare {
+@mixin virtualSquareBottom {
   content: "";
   width: 24px;
   height: 24px;
@@ -26,6 +26,19 @@
   z-index: 100;
   bottom: -12px;
   left: -11px;
+  background-color: black;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@mixin virtualSquareTop {
+  content: "";
+  width: 26px;
+  height: 27px;
+  border-bottom: 2px solid rgb(0, 255, 0);
+  position: absolute;
+  top: -14px;
+  right: -13px;
   background-color: black;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -70,9 +83,27 @@
 }
 
 .about {
+  padding-bottom: 40px;
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
   flex-wrap: wrap;
+  justify-content: space-around;
+  section {
+    width: 45%;
+    min-width: 300px;
+  }
+  .occupation {
+    text-align: right;
+  }
+}
+.aboutMe {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 $animationSpeed: 20s;
@@ -91,12 +122,11 @@ $skillsCount: 10;
 // Styling
 .skills {
   background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  // box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   overflow: hidden;
   position: relative;
   width: 100%;
   text-align: center;
-
   .skillList {
     list-style-type: none;
     display: flex;
@@ -108,6 +138,7 @@ $skillsCount: 10;
       animation-fill-mode: forwards;
       width: 250px;
       transition-duration: 1s;
+      z-index: 99;
     }
 
     li:hover {
@@ -262,8 +293,11 @@ $skillsCount: 10;
           margin-top: 0px;
         }
       }
+      section::before {
+        @include virtualSquareBottom();
+      }
       section::after {
-        @include virtualSquare();
+        @include virtualSquareTop();
       }
     }
   }

@@ -271,21 +271,24 @@ export default function Home() {
           </ul>
         </nav>
       </header>
-      <hr />
       <main>
-        <article className={styles.about} id="about">
-          <h2>Sobre</h2>
-          <p>{about}</p>
-          <article>
-            <h3>Ocupação atual</h3>
-            <p>{occupation}</p>
+        <article id="about">
+          <section className={styles.aboutMe}>
+            <h2>Sobre</h2>
+            <p>{about}</p>
+          </section>
+          <article className={styles.about} >
+            <section className={styles.occupation}>
+              <h3>Ocupação atual</h3>
+              <p>{occupation}</p>
+            </section>
+            <section className={styles.quote}>
+              <h3>Citação</h3>
+              <blockquote>{quote}</blockquote>
+              <cite>{quoteAuthor}</cite>
+            </section>
           </article>
-          <article>
-            <h3>Citação</h3>
-            <blockquote>{quote}</blockquote>
-            <cite>{quoteAuthor}</cite>
-          </article>
-          <article className={styles.skills}>
+          <article id="skills" className={styles.skills}>
             <h3>Habilidades</h3>
             <ul className={styles.skillList}>
               {skills.map(skill => (
@@ -314,14 +317,14 @@ export default function Home() {
           </article>
         </article>
         <article className={styles.portfolio} id="portfolio">
-          <h2>Portfólio</h2>
+          <h2 className={styles.name}>Portfólio</h2>
           <ul>
             {portfolio.map(item => (
               <li key={item.title}>
                 <section>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <a target="_blank" rel="noopener" href={item.link}>Conhecer</a>
+                  <a target="_blank" rel="noopener" href={item.link}>> Conhecer</a>
                 </section>
               </li>
             ))}
