@@ -313,6 +313,20 @@ export default function Home() {
             </ul>
           </article>
         </article>
+        <article className={styles.portfolio} id="portfolio">
+          <h2>Portfólio</h2>
+          <ul>
+            {portfolio.map(item => (
+              <li key={item.title}>
+                <section>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <a target="_blank" rel="noopener" href={item.link}>Conhecer</a>
+                </section>
+              </li>
+            ))}
+          </ul>
+        </article>
         <article className={styles.services} id="services">
           <h2>Serviços</h2>
           <ul>
@@ -322,20 +336,6 @@ export default function Home() {
                   <h3>{service.name}</h3>
                   <h4>{service.subtitle}</h4>
                   <p>{service.description}</p>
-                </section>
-              </li>
-            ))}
-          </ul>
-        </article>
-        <article id="portfolio">
-          <h2>Portfólio</h2>
-          <ul>
-            {portfolio.map(item => (
-              <li key={item.title}>
-                <section>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  <a target="_blank" rel="noopener" href={item.link}>Conhecer</a>
                 </section>
               </li>
             ))}
