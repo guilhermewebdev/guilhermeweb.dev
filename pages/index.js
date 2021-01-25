@@ -179,6 +179,7 @@ const TwitterUsername = "GuilhermeWebDev"
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "description": description,
   "image": [
     "https://guilhermeweb.dev/me.png",
   ],
