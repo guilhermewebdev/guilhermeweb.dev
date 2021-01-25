@@ -284,8 +284,8 @@ export default function Home() {
         <meta name="author" content={name} />
         <meta name="creator" content={name} />
         <meta name="og:region" content="MG" />
-        <meta http-equiv="content-language" content="pt-br" />
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta httpEquiv="content-language" content="pt-br" />
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="og:country-name" content="BR" />
         <meta name="owner" content={name} />
         <meta name="og:email" content={structuredData.email} />
