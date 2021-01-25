@@ -60,7 +60,7 @@ const about = `Olá, sou Guilherme Isaías, desenvolvedor de software Full-Stack
               Sempre utilizando as melhores práticas de desenvolvimento, com testes automatizados,
               Clean Code, integração contínua, entre outros, facilitando a manutenção, escalabilidade 
               e garantindo a estabilidade dos sistemas.
-            `.replace('\n', '')
+            `.replace('/\r?\n|\r/', '')
 const occupation = 'Desenvolvedor Web Autônomo'
 const quote = 'As grandes conquistas da humanidade foram obtidas conversando, e as grandes falhas pela falta de diálogo.'
 const quoteAuthor = 'Stephen Hawking'
