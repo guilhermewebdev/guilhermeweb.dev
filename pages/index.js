@@ -177,20 +177,52 @@ const FBApp = 223494466159144;
 const pixel = '285445496036470';
 const TwitterUsername = "GuilhermeWebDev"
 const structuredData = {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org",
   "@type": "Person",
-  address: {
+  "image": [
+    "https://guilhermeweb.dev/me.png",
+  ],
+  "@id": "http://guilhermeweb.dev",
+  "name": name,
+  "address": {
     "@type": "PostalAddress",
-    addressLocality: "Barbacena",
-    addressRegion: "MG",
+    "addressLocality": "Barbacena",
+    "addressRegion": "MG",
+    "addressCountry": "BR"
   },
-  email: "mailto:guilherme@guilhermeweb.dev",
-  image: "me.png",
-  jobTitle: "Programmer",
-  name: name,
-  telephone: "+55 (32) 9 9198-2237",
-  url: "https://guilhermeweb.dev"
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": name
+    }
+  },
+  "url": "https://guilhermeweb.dev/",
+  "telephone": "+5532991982237",
+  "servesCuisine": "Brazilian",
+  "priceRange": "$$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "23:00"
+    },
+  ],
 }
+
 const googleTraking = 'UA-135503394-3';
 
 function injectGA() {
