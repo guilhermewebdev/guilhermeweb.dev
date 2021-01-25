@@ -292,6 +292,7 @@ export default function Home() {
         <meta name="owner" content={name} />
         <meta name="og:email" content={structuredData.email} />
         <meta name="twitter:image:alt" content={description} />
+        <meta name="og:image:alt" content={description} />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
         <script
           type="application/ld+json"
