@@ -190,18 +190,6 @@ const structuredData = {
     "addressRegion": "MG",
     "addressCountry": "BR"
   },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": name
-    }
-  },
   "url": "https://guilhermeweb.dev/",
   "telephone": "+5532991982237",
   "servesCuisine": "Brazilian",
