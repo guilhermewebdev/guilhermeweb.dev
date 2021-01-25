@@ -277,37 +277,37 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="author" content="Guilherme Isaías" />
-        {!isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
         <title>{name} - Web Developer</title>
-        <link rel="shortcut icon" href="/favicon.png" />
+        <meta charSet="UTF-8" />
+        {!isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
+        <link rel="icon" href="/favicon.png" />
         <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="copyright" content={name} />
+        <meta name="author" content={name} />
+        <meta name="creator" content={name} />
+        <meta name="owner" content={name} />
+        <meta httpEquiv="content-language" content="pt-br" />
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+        <meta property="fb:app_id" content={FBApp} />
         <meta property="og:image" content="/thumb.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="2050" />
         <meta property="og:image:height" content="780" />
-        <meta name="twitter:site" content={TwitterUsername} />
-        <meta property="fb:app_id" content={FBApp} />
-        <meta name="keywords" content={keywords} />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content="https://guilhermeweb.dev/" />
-        <meta name="twitter:card" content="/me.png" />
         <meta property="og:site_name" content={name} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
-        <meta name="copyright" content={name} />
-        <meta name="author" content={name} />
-        <meta name="creator" content={name} />
-        <meta name="og:region" content="MG" />
-        <meta httpEquiv="content-language" content="pt-br" />
-        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="og:country-name" content="BR" />
-        <meta name="owner" content={name} />
-        <meta name="og:email" content={structuredData.email} />
-        <meta name="twitter:image:alt" content={description} />
-        <meta name="og:image:alt" content={description} />
+        <meta property="og:region" content="MG" />
+        <meta property="og:country-name" content="BR" />
+        <meta property="og:email" content={structuredData.email} />
+        <meta property="og:image:alt" content={description} />
+        <meta property="twitter:site" content={TwitterUsername} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image:alt" content={description} />
+        <meta property="twitter:image" content='/me.png' />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
         <script
           type="application/ld+json"
