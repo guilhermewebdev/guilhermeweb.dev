@@ -282,7 +282,7 @@ export default function Home() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
-        digit(previous + current + (index % 2 == 0 ? '█' : '  '))
+        digit(previous + current + (index % 2 == 0 ? '_' : '  '))
       }, index * 50);
       return previous + current;
     }, '')
@@ -434,7 +434,7 @@ export default function Home() {
         </article>
         <section className={styles.contact} id="contact">
           <h2 className={styles.name}>Entre em contato</h2>
-          <p>Solicite orçamentos ou tire suas dúvidas, responderei o mais rápido possível!</p>
+          <h3>Solicite orçamentos ou tire suas dúvidas</h3>
           <form className={styles.contactForm} {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
             <ul>
               <li>
