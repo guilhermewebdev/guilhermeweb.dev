@@ -191,15 +191,14 @@ const structuredData = {
 const googleTraking = 'UA-135503394-3';
 
 function injectGA() {
-  if (typeof window == 'undefined') {
-    return;
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', googleTraking);
   }
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', googleTraking);
 };
 
 export default function Home() {
