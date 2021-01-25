@@ -178,7 +178,7 @@ const pixel = '285445496036470';
 const TwitterUsername = "GuilhermeWebDev"
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Business",
+  "@type": "LocalBusiness",
   "image": [
     "https://guilhermeweb.dev/me.png",
   ],
