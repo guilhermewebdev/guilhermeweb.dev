@@ -173,6 +173,8 @@ const contacts = [
     link: 'https://web.whatsapp.com/send?phone=5532991982237'
   }
 ]
+const FBApp = 223494466159144;
+const TwitterUsername = "GuilhermeWebDev"
 const structuredData = {
   "@context": "http://schema.org",
   "@type": "Person",
@@ -267,7 +269,27 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.png" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
+        <meta name="og:image" src="/thumb.png" />
+        <meta name="twitter:site" content={TwitterUsername} />
+        <meta property="fb:app_id" content={FBApp} />
         <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={name} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content="https://guilhermeweb.dev/" />
+        <meta name="twitter:card" content="/thumb.png" />
+        <meta property="og:site_name" content={name} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="copyright" content={name} />
+        <meta name="author" content={name} />
+        <meta name="creator" content={name} />
+        <meta name="og:region" content="MG" />
+        <meta http-equiv="content-language" content="pt-br" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="og:country-name" content="BR" />
+        <meta name="owner" content={name} />
+        <meta name="og:email" content={structuredData.email} />
+        <meta name="twitter:image:alt" content={description} />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
         <script
           type="application/ld+json"
