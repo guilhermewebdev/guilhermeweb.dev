@@ -268,7 +268,7 @@ export default function Home() {
         <title>{name} - Web Developer</title>
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="description" content={description} />
-        <meta name="og:image" content="/thumb.png" />
+        <meta property="og:image" content="/thumb.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="2050" />
         <meta property="og:image:height" content="780" />
