@@ -185,8 +185,6 @@ const structuredData = {
   "@id": "http://guilhermeweb.dev",
   "name": name,
   "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Barbacena",
     "addressRegion": "MG",
     "addressCountry": "BR"
   },
