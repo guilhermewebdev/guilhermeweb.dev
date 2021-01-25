@@ -154,7 +154,7 @@ const portfolio = [
     link: 'https://odontoseries.herokuapp.com/',
   }
 ]
-const contactAction = "https://dev.us10.list-manage.com/subscribe/post?u=b5756f49cfa68ec8977aa6101&amp;id=5cfba22435"
+const contactAction = "https://us10.list-manage.com/contact-form?u=b5756f49cfa68ec8977aa6101&form_id=0ba2105a76d5d8a6694e3a6e3eb80a8b"
 const contacts = [
   {
     name: '(32) 9 9198-2237',
@@ -188,6 +188,19 @@ const structuredData = {
   telephone: "+55 (32) 9 9198-2237",
   url: "https://guilhermeweb.dev"
 }
+const googleTraking = 'UA-135503394-3';
+
+function injectGA() {
+  if (typeof window == 'undefined') {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', googleTraking);
+};
 
 export default function Home() {
   const isAmp = useAmp()
@@ -232,7 +245,7 @@ export default function Home() {
       setForm({ ...form, [field]: event.target.value })
     }
   }
-  useEffect(() => {
+  function typingEffect() {
     const list = slogan.split('');
     list.reduce((previous, current, index) => {
       setTimeout(() => {
@@ -240,7 +253,11 @@ export default function Home() {
       }, index * 50);
       return previous + current;
     }, '')
-  }, [])
+
+  }
+
+  useEffect(typingEffect, [])
+  useEffect(injectGA, [])
   return (
     <>
       <Head>
@@ -252,6 +269,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
