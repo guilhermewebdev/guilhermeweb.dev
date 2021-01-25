@@ -293,7 +293,7 @@ export default function Home() {
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content="https://guilhermeweb.dev/" />
-        <meta name="twitter:card" content="/thumb.png" />
+        <meta name="twitter:card" content="/me.png" />
         <meta property="og:site_name" content={name} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
