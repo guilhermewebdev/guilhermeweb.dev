@@ -213,8 +213,7 @@ function facebookPixel() {
     n.queue = []; t = b.createElement(e); t.async = !0;
     t.src = v; s = b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t, s)
-  }(window, document, 'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', pixel);
   fbq('track', 'PageView');
 }
@@ -272,9 +271,9 @@ export default function Home() {
 
   }
 
-  useEffect(typingEffect, [])
-  useEffect(injectGA, [])
-  useEffect(facebookPixel, [])
+  useEffect(typingEffect, [1])
+  useEffect(injectGA, [1])
+  useEffect(facebookPixel, [1])
   return (
     <>
       <Head>
