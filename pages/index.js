@@ -154,7 +154,7 @@ const portfolio = [
     link: 'https://odontoseries.herokuapp.com/',
   }
 ]
-const contactAction = "https://us10.list-manage.com/contact-form?u=b5756f49cfa68ec8977aa6101&form_id=0ba2105a76d5d8a6694e3a6e3eb80a8b"
+const contactAction = "https://submit.jotform.com/submit/210254257271651/"
 const contacts = [
   {
     name: '(32) 9 9198-2237',
@@ -240,6 +240,7 @@ export default function Home() {
   const [form, setForm] = useState({
     email: '',
     name: '',
+    area: '',
     phone: '',
     subject: '',
     message: '',
@@ -433,30 +434,43 @@ export default function Home() {
         <section className={styles.contact} id="contact">
           <h2 className={styles.name}>Entre em contato</h2>
           <h3>Solicite orçamentos ou tire suas dúvidas</h3>
-          <form className={styles.contactForm} {...formAttr} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target={isAmp ? '_top' : '_blank'}>
+          <form className={styles.contactForm} {...formAttr} method="post" name="form_210254257271651" id="210254257271651" acceptCharset="utf-8" autoComplete="on" target={isAmp ? '_top' : '_blank'}>
             <ul>
-              <li>
-                <label htmlFor="mce-EMAIL">Email:</label>
-                <input required type="email" value={form.email} id="mce-EMAIL" name="EMAIL" onInput={handlerInput('email')} />
+              <li id="id_3">
+                <label id="label_3" htmlFor="input_3">Email:</label>
+                <input value={form.email} onInput={handlerInput('email')} type="text" id="input_3" name="q3_email3" datatype="input-textbox" placeholder=" " required />
               </li>
-              <li>
-                <label htmlFor="mce-NAME">Nome:</label>
-                <input required type="text" value={form.name} id="mce-NAME" name="NAME" onInput={handlerInput('name')} />
+              <li id="id_1">
+                <label id="label_1" htmlFor="input_1"> Nome: </label>
+                <input type="text" required value={form.name} onInput={handlerInput('name')} id="input_1" name="q1_nome1" placeholder=" " />
               </li>
-              <li>
-                <label htmlFor="mce-PHONE">Telefone:</label>
-                <input type="text" name="PHONE" className="" id="mce-PHONE" value={form.phone} onInput={handlerInput('phone')} />
+              <li datatype="control_phone" id="id_8">
+                <fieldset className={styles.inputPhone} id="input_8_area">
+                  <legend id="label_8" htmlFor="input_8_area">Telefone:</legend>
+                  <span className={styles.areaCode}>
+                    <span>(</span>
+                    <input maxLength={2} value={form.area} onInput={handlerInput('area')} type="tel" id="input_8_area" name="q8_telefone[area]" />
+                    <span>)-</span>
+                  </span>
+                  <span className={styles.phone}>
+                    <input value={form.phone} onInput={handlerInput('phone')} type="tel" id="input_8_phone" name="q8_telefone[phone]" />
+                  </span>
+                </fieldset>
               </li>
-              <li>
-                <label htmlFor="mce-ASSUNTO">Assunto:</label>
-                <input required type="text" value={form.subject} name="ASSUNTO" id="mce-ASSUNTO" onInput={handlerInput('subject')} />
+              <li id="id_4">
+                <label id="label_4" htmlFor="input_4"> Assunto: </label>
+                <input value={form.subject} onInput={handlerInput('subject')} type="text" id="input_4" name="q4_assunto" datatype="input-textbox" placeholder=" " />
               </li>
-              <li>
-                <label htmlFor="mce-MESSAGE">Mensagem:</label>
-                <textarea required value={form.message} name="MESSAGE" id='mce-MESSAGE' onInput={handlerInput('message')} />
+              <li datatype="control_textarea" id="id_5">
+                <label id="label_5" htmlFor="input_5">Mensagem:</label>
+                <textarea value={form.message} onInput={handlerInput('message')} id="input_5" name="q5_mensagem" cols="50" rows="7" required ></textarea>
               </li>
             </ul>
-            <input type="hidden" name="b_b5756f49cfa68ec8977aa6101_5cfba22435" tabIndex="-1" value="" />
+            <input type="text" name="website" style={{ display: 'none' }} />
+            <input type="hidden" id="simple_spc" name="simple_spc" value="210254257271651" />
+            <input type="hidden" name="formID" value="210254257271651" />
+            <input type="hidden" id="JWTContainer" />
+            <input type="hidden" id="cardinalOrderNumber" />
             <input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" className={styles.button} />
           </form>
         </section>

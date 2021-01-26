@@ -356,3 +356,35 @@ $skillsCount: 10;
     }
   }
 }
+
+.inputPhone {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  position: relative;
+  justify-content: space-around;
+  flex-grow: 1;
+  border: none;
+  padding: 0;
+  width: 100%;
+  .areaCode {
+    position: relative;
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: flex-end;
+    input {
+      min-width: 30px;
+    }
+  }
+  .phone {
+    position: relative;
+    width: 80%;
+    display: flex;
+    input {
+      width: 100%;
+    }
+  }
+}
