@@ -446,7 +446,7 @@ export default function Home() {
               </li>
               <li datatype="control_phone" id="id_8">
                 <fieldset className={styles.inputPhone} id="input_8_area">
-                  <legend id="label_8" htmlFor="input_8_area">Telefone:</legend>
+                  <legend>Telefone:</legend>
                   <span className={styles.areaCode}>
                     <span>(</span>
                     <input maxLength={2} value={form.area} onInput={handlerInput('area')} type="tel" id="input_8_area" name="q8_telefone[area]" />
