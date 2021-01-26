@@ -309,8 +309,8 @@ export default function Home() {
         <meta property="fb:app_id" content={FBApp} />
         <meta property="og:image" content="/me.png" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="2050" />
-        <meta property="og:image:height" content="780" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="1000" />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content="https://guilhermeweb.dev/" />
