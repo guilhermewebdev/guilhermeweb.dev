@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/404.module.scss'
 import Link from 'next/link'
 import home from '../styles/Home.module.scss'
+import Head from 'next/head';
 
 
 function createLine(amount) {
@@ -33,24 +34,29 @@ export default function Custom404() {
         }
     }, [])
     return (
-        <main className={styles.main}>
-            <section className={styles.section}>
-                <section>
-                    <h1>404</h1>
-                    <p>Página não encontrada</p>
-                    <Link href="/">
-                        <a className={home.button}>Voltar ao Início</a>
-                    </Link>
+        <>
+            <Head>
+                <title>404 - Página não Encontrada</title>
+            </Head>
+            <main className={styles.main}>
+                <section className={styles.section}>
+                    <section>
+                        <h1>404</h1>
+                        <p>Página não encontrada</p>
+                        <Link href="/">
+                            <a className={home.button}>Voltar ao Início</a>
+                        </Link>
+                    </section>
+                    <div className={styles.bgText}></div>
                 </section>
-                <div className={styles.bgText}></div>
-            </section>
-            <div className={styles.background}>
-                {background.map((row, rowIndex) => (
-                    <span key={rowIndex}>
-                        {row}
-                    </span>
-                ))}
-            </div>
-        </main>
+                <div className={styles.background}>
+                    {background.map((row, rowIndex) => (
+                        <span key={rowIndex}>
+                            {row}
+                        </span>
+                    ))}
+                </div>
+            </main>
+        </>
     )
 }
