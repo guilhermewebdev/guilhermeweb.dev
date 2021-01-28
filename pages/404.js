@@ -20,13 +20,13 @@ export default function Custom404() {
     const matrix = getBackgroundMatrix()
     const [background, setBackground] = useState(matrix)
     useEffect(() => {
-        function updateMatrix(){
+        function updateMatrix() {
             setBackground(getBackgroundMatrix())
         }
-        if(typeof window !== 'undefined') {
+        if (typeof window !== 'undefined') {
             window.addEventListener('resize', updateMatrix)
             window.addEventListener('wheel', updateMatrix)
-            return () =>  {
+            return () => {
                 window.removeEventListener('resize', updateMatrix)
                 window.removeEventListener('wheel', updateMatrix)
             }
@@ -35,11 +35,13 @@ export default function Custom404() {
     return (
         <main className={styles.main}>
             <section className={styles.section}>
-                <h1>404</h1>
-                <p>Página não encontrada</p>
-                <Link href="/">
-                    <a className={home.button}>Voltar ao Início</a>
-                </Link>
+                <section>
+                    <h1>404</h1>
+                    <p>Página não encontrada</p>
+                    <Link href="/">
+                        <a className={home.button}>Voltar ao Início</a>
+                    </Link>
+                </section>
                 <div className={styles.bgText}></div>
             </section>
             <div className={styles.background}>

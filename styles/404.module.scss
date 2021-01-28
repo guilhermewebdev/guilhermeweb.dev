@@ -22,8 +22,15 @@
     text-align: center;
     flex-direction: column;
     background-color: transparent;
-    transition-duration: 2s;
-    transform: perspective(400px) rotateX(15deg) rotateY(-15deg);
+    section {
+      z-index: 10;
+      background-color: transparent;
+      transition-duration: 2s;
+      transform: perspective(400px) rotateX(15deg) rotateY(-15deg);
+      &:hover {
+          transform: scale(1.2);
+      }
+    }
     h1,
     p,
     a {
