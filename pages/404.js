@@ -6,12 +6,12 @@ import Head from 'next/head';
 
 
 function createLine(amount) {
-    return new Array(amount).fill(0).map(() => Math.round(Math.random() * (0 + 9))).join('');
+    return new Array(amount).fill(0).map(() => Math.round(Math.random() * (0 + 9))).join(' ');
 }
 function getBackgroundMatrix() {
     if (typeof window !== 'undefined') {
         const height = Math.round(window.innerHeight / 30);
-        const width = Math.round(window.innerWidth / 15);
+        const width = Math.round(window.innerWidth / 36);
         const matrix = new Array(height).fill(0).map(() => createLine(width))
         return matrix
     }
