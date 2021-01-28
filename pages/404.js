@@ -5,7 +5,7 @@ import home from '../styles/Home.module.scss'
 
 
 function createLine(amount) {
-    return new Array(amount).fill(0).map(() => Math.round(Math.random() * (0 + 1))).join('');
+    return new Array(amount).fill(0).map(() => Math.round(Math.random() * (0 + 9))).join('');
 }
 function getBackgroundMatrix() {
     if (typeof window !== 'undefined') {
@@ -17,7 +17,21 @@ function getBackgroundMatrix() {
     return []
 }
 export default function Custom404() {
-    const background = getBackgroundMatrix()
+    const matrix = getBackgroundMatrix()
+    const [background, setBackground] = useState(matrix)
+    useEffect(() => {
+        function updateMatrix(){
+            setBackground(getBackgroundMatrix())
+        }
+        if(typeof window !== 'undefined') {
+            window.addEventListener('resize', updateMatrix)
+            window.addEventListener('wheel', updateMatrix)
+            return () =>  {
+                window.removeEventListener('resize', updateMatrix)
+                window.removeEventListener('wheel', updateMatrix)
+            }
+        }
+    }, [])
     return (
         <main className={styles.main}>
             <section className={styles.section}>
