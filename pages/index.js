@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.scss'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
 import { useEffect, useState } from 'react'
-
+import { injectGA, facebookPixel, googleTraking } from '../components/analytics';
 export const config = { amp: 'hybrid' }
 
 const socials = [
@@ -194,7 +194,6 @@ const contacts = [
   }
 ]
 const FBApp = 223494466159144;
-const pixel = '285445496036470';
 const TwitterUsername = "GuilhermeWebDev"
 const structuredData = {
   "@context": "https://schema.org",
@@ -229,32 +228,7 @@ const structuredData = {
   ],
 }
 
-const googleTraking = 'UA-135503394-3';
 
-function injectGA() {
-  if (typeof window !== 'undefined') {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', googleTraking);
-  }
-};
-function facebookPixel() {
-  !function (f, b, e, v, n, t, s) {
-    if (f.fbq) return; n = f.fbq = function () {
-      n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-    };
-    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-    n.queue = []; t = b.createElement(e); t.async = !0;
-    t.src = v; s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s)
-  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', pixel);
-  fbq('track', 'PageView');
-}
 export default function Home() {
   const isAmp = useAmp()
   const [form, setForm] = useState({

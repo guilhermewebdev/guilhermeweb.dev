@@ -3,6 +3,7 @@ import styles from '../styles/404.module.scss'
 import Link from 'next/link'
 import home from '../styles/Home.module.scss'
 import Head from 'next/head';
+import { injectGA, facebookPixel, googleTraking } from '../components/analytics';
 
 
 function createLine(amount) {
@@ -33,10 +34,13 @@ export default function Custom404() {
             }
         }
     }, [])
+    useEffect(injectGA, [1])
+    useEffect(facebookPixel, [1])
     return (
         <>
             <Head>
                 <title>404 - Página não Encontrada</title>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
             </Head>
             <main className={styles.main}>
                 <section className={styles.section}>
