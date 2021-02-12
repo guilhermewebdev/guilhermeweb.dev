@@ -66,6 +66,18 @@ const quote = 'As grandes conquistas da humanidade foram obtidas conversando, e 
 const quoteAuthor = 'Stephen Hawking'
 const skills = [
   {
+    name: 'Git',
+    icon: "https://img.icons8.com/color/150/000000/git.png"
+  },
+  {
+    name: 'Relational Database',
+    icon: "https://img.icons8.com/fluent/150/000000/database.png",
+  },
+  {
+    name: 'MongoDB',
+    icon: "https://img.icons8.com/color/150/000000/mongodb.png",
+  },
+  {
     name: 'Python',
     icon: "https://img.icons8.com/color/150/000000/python.png"
   },
@@ -74,27 +86,23 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/django.png",
   },
   {
+    name: 'REST API',
+    icon: 'https://img.icons8.com/fluent/150/000000/api-settings.png'
+  },
+  {
+    name: 'GraphQL',
+    icon: 'https://img.icons8.com/color/150/000000/graphql.png'
+  },
+  {
     name: 'Docker',
     icon: "https://img.icons8.com/color/150/000000/docker.png",
-  },
-  {
-    name: 'JavaScript / Typescript',
-    icon: "https://img.icons8.com/color/150/000000/typescript.png",
-  },
-  {
-    name: 'React.js / React Native',
-    icon: "https://img.icons8.com/officel/150/000000/react.png",
-  },
-  {
-    name: 'Node.js',
-    icon: "https://img.icons8.com/color/150/000000/nodejs.png",
   },
   {
     name: 'DevOps / FullCycle',
     icon: "https://img.icons8.com/color/150/000000/settings-3--v1.png"
   },
   {
-    name: 'Computação em núvem',
+    name: 'Computação em Núvem',
     icon: "https://img.icons8.com/fluent/150/000000/cloud.png",
   },
   {
@@ -102,13 +110,25 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/linux.png",
   },
   {
-    name: 'Git',
-    icon: "https://img.icons8.com/color/150/000000/git.png"
-  },
-  {
     name: 'Sass',
     icon: "https://img.icons8.com/color/150/000000/sass.png"
-  }
+  },
+  {
+    name: 'JavaScript / TypeScript',
+    icon: "https://img.icons8.com/color/150/000000/typescript.png",
+  },
+  {
+    name: 'React.js / React Native',
+    icon: "https://img.icons8.com/color/150/000000/react-native.png"
+  },
+  {
+    name: 'Vue.js',
+    icon: "https://img.icons8.com/color/150/000000/vue-js.png"
+  },
+  {
+    name: 'Node.js',
+    icon: "https://img.icons8.com/color/150/000000/nodejs.png",
+  },
 ]
 const services = [
   {
