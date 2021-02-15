@@ -316,7 +316,7 @@ export default function Home() {
         <meta property="og:email" content={structuredData.email} />
         <meta property="og:image:alt" content={description} />
         <meta property="twitter:site" content={TwitterUsername} />
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:card" content="/me.png" />
         <meta property="twitter:image:alt" content={description} />
         <meta property="twitter:image" content='/me.png' />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>

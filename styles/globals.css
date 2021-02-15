@@ -21,7 +21,6 @@ a {
 }
 a:hover {
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.733);
-  transform: scale(2);
 }
 
 * {
