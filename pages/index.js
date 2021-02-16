@@ -194,7 +194,7 @@ const contacts = [
   }
 ]
 const FBApp = 223494466159144;
-const TwitterUsername = "GuilhermeWebDev"
+const TwitterUsername = "@GuilhermeWebDev"
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -301,7 +301,7 @@ export default function Home() {
         <meta httpEquiv="content-language" content="pt-br" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
         <meta property="fb:app_id" content={FBApp} />
-        <meta property="og:image" content="/me.png" />
+        <meta property="og:image" content={`${siteUrl}me.png`} />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1000" />
         <meta property="og:image:height" content="1000" />
@@ -319,7 +319,7 @@ export default function Home() {
         <meta property="twitter:creator" content={TwitterUsername} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image:alt" content={description} />
-        <meta property="twitter:image" content='/me.png' />
+        <meta property="twitter:image" content={`${siteUrl}me.png`} />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
         <script
           type="application/ld+json"
