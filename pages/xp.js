@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '../styles/Xp.module.scss'
 
 const PROGRAMS = [
@@ -12,6 +12,8 @@ const PROGRAMS = [
             }
         },
         opened: false,
+        minimized: false,
+        content: null
     },
 ]
 
@@ -49,11 +51,38 @@ export default function Xp() {
             }
         }
     }
-  
+    function toggleProgram(index, state){
+        return function(){
+            programs[index].opened = state;
+            setPrograms([...programs])
+        }
+    }
+    function openProgram(index){
+        return toggleProgram(index, true)
+    }
+    function closeProgram(index){
+        return toggleProgram(index, false)
+    }
     return (
         <>
             <main className={styles.main}>
                 <section className={styles.desktop}>
+                    {programs.filter(program => program.opened).map((program, index) => (
+                        <div key={`${program.name}-${index}`} style={{ display: program.minimized ? 'none' : 'flex' }} className={styles.window}>
+                            <div className={styles.topBar}>
+                                <div className={styles.windowTitle}>
+                                    <img height={15} width='auto' src={program.icon.img} />
+                                    <span>{program.name}</span>
+                                </div>
+                                <div className={styles.actions}>
+                                    <button>_</button>
+                                    <button></button>
+                                    <button onClick={closeProgram(index)} className={styles.close}>&times;</button>
+                                </div>
+                            </div>
+                            <div className={styles.content}>{program.content}</div>
+                        </div>
+                    ))}
                     {programs.map((program, index) => (
                         <section
                             key={program.name}
@@ -61,6 +90,7 @@ export default function Xp() {
                             onMouseUp={removeDragListener}
                             style={{ top: program.icon.position.y, left: program.icon.position.x }}
                             className={styles.programIcon}
+                            onDoubleClick={openProgram(index)}
                         >
                             <img src={program.icon.img} />
                             <span>{program.name}</span>
