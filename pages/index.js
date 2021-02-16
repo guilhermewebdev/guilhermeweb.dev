@@ -227,7 +227,7 @@ const structuredData = {
     },
   ],
 }
-
+const siteUrl = 'https://guilhermeweb.dev/'
 
 export default function Home() {
   const isAmp = useAmp()
@@ -307,7 +307,7 @@ export default function Home() {
         <meta property="og:image:height" content="1000" />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content="https://guilhermeweb.dev/" />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:site_name" content={name} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -316,7 +316,8 @@ export default function Home() {
         <meta property="og:email" content={structuredData.email} />
         <meta property="og:image:alt" content={description} />
         <meta property="twitter:site" content={TwitterUsername} />
-        <meta property="twitter:card" content="/me.png" />
+        <meta property="twitter:creator" content={TwitterUsername} />
+        <meta property="twitter:card" content="summary" />
         <meta property="twitter:image:alt" content={description} />
         <meta property="twitter:image" content='/me.png' />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
