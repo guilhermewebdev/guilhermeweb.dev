@@ -61,7 +61,7 @@ const about = `Olá, sou Guilherme Isaías, desenvolvedor de software Full-Stack
               Clean Code, integração contínua, entre outros, facilitando a manutenção, escalabilidade 
               e garantindo a estabilidade dos sistemas.
             `
-const occupation = 'Desenvolvedor Web Autônomo'
+const occupation = 'Desenvolvedor FullStack na Ubistart'
 const quote = 'As grandes conquistas da humanidade foram obtidas conversando, e as grandes falhas pela falta de diálogo.'
 const quoteAuthor = 'Stephen Hawking'
 const skills = [
