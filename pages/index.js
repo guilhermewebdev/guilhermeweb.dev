@@ -102,7 +102,7 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/settings-3--v1.png"
   },
   {
-    name: 'Computação em Núvem',
+    name: 'Cloud Computing',
     icon: "https://img.icons8.com/fluent/150/000000/cloud.png",
   },
   {
