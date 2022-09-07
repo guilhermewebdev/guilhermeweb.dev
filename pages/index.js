@@ -98,6 +98,10 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/docker.png",
   },
   {
+    name: 'Kubernetes',
+    icon: "https://img.icons8.com/color/150/000000/kubernetes.png",
+  },
+  {
     name: 'DevOps / FullCycle',
     icon: "https://img.icons8.com/color/150/000000/settings-3--v1.png"
   },
