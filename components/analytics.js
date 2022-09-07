@@ -1,4 +1,4 @@
-export const googleTraking = 'UA-135503394-3';
+export const googleTracking = 'UA-135503394-3';
 export const pixel = '285445496036470';
 
 export function injectGA() {
@@ -8,7 +8,7 @@ export function injectGA() {
       window.dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', googleTraking);
+    gtag('config', googleTracking);
   }
 };
 

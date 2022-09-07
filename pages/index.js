@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.scss'
 import Image from 'next/image'
 import { useAmp } from 'next/amp'
 import { useEffect, useState } from 'react'
-import { injectGA, facebookPixel, googleTraking } from '../components/analytics';
+import { injectGA, facebookPixel, googleTracking } from '../components/analytics';
 export const config = { amp: 'hybrid' }
 
 const socials = [
@@ -306,9 +306,9 @@ export default function Home() {
       return previous + current;
     }, '')
   }
-  useEffect(typingEffect, [1])
-  useEffect(injectGA, [1])
-  useEffect(facebookPixel, [1])
+  useEffect(typingEffect, [])
+  useEffect(injectGA, [])
+  useEffect(facebookPixel, [])
   return (
     <>
       <Head>
@@ -344,7 +344,7 @@ export default function Home() {
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image:alt" content={description} />
         <meta property="twitter:image" content={`${siteUrl}me.png`} />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTracking}`}></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

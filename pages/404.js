@@ -3,7 +3,7 @@ import styles from '../styles/404.module.scss'
 import Link from 'next/link'
 import home from '../styles/Home.module.scss'
 import Head from 'next/head';
-import { injectGA, facebookPixel, googleTraking } from '../components/analytics';
+import { injectGA, facebookPixel, googleTracking } from '../components/analytics';
 
 
 function createLine(amount) {
@@ -18,8 +18,8 @@ function getBackgroundMatrix() {
     }
     return []
 }
+const matrix = getBackgroundMatrix()
 export default function Custom404() {
-    const matrix = getBackgroundMatrix()
     const [background, setBackground] = useState(matrix)
     useEffect(() => {
         function updateMatrix() {
@@ -34,13 +34,13 @@ export default function Custom404() {
             }
         }
     }, [])
-    useEffect(injectGA, [1])
-    useEffect(facebookPixel, [1])
+    useEffect(injectGA, [])
+    useEffect(facebookPixel, [])
     return (
         <>
             <Head>
                 <title>404 - Página não Encontrada</title>
-                <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTraking}`}></script>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTracking}`}></script>
             </Head>
             <main className={styles.main}>
                 <section className={styles.section}>
@@ -55,9 +55,7 @@ export default function Custom404() {
                 </section>
                 <div className={styles.background}>
                     {background.map((row, rowIndex) => (
-                        <span key={rowIndex}>
-                            {row}
-                        </span>
+                        <span key={rowIndex} className={styles.row}>{row}</span>
                     ))}
                 </div>
             </main>
