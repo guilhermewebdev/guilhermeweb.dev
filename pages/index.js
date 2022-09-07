@@ -78,12 +78,24 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/mongodb.png",
   },
   {
-    name: 'Python',
-    icon: "https://img.icons8.com/color/150/000000/python.png"
+    name: 'Node.js',
+    icon: "https://img.icons8.com/color/150/000000/nodejs.png",
   },
   {
-    name: 'Django',
-    icon: "https://img.icons8.com/color/150/000000/django.png",
+    name: 'Golang',
+    icon: "https://img.icons8.com/color/150/000000/golang.png",
+  },
+  {
+    name: 'Rust',
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png",
+  },
+  {
+    name: 'Ruby',
+    icon: "https://img.icons8.com/color/150/000000/ruby-programming-language.png"
+  },
+  {
+    name: 'Python',
+    icon: "https://img.icons8.com/color/150/000000/python.png"
   },
   {
     name: 'REST API',
@@ -106,8 +118,20 @@ const skills = [
     icon: "https://img.icons8.com/color/150/000000/settings-3--v1.png"
   },
   {
+    name: 'CI/CD',
+    icon: "https://img.icons8.com/color/150/000000/jenkins.png"
+  },
+  {
     name: 'Cloud Computing',
     icon: "https://img.icons8.com/fluent/150/000000/cloud.png",
+  },
+  {
+    name: 'AWS',
+    icon: "https://img.icons8.com/color/150/000000/amazon-web-services.png",
+  },
+  {
+    name: 'Ansible',
+    icon: "https://img.icons8.com/color/150/000000/ansible.png",
   },
   {
     name: 'Linux',
@@ -128,10 +152,6 @@ const skills = [
   {
     name: 'Vue.js',
     icon: "https://img.icons8.com/color/150/000000/vue-js.png"
-  },
-  {
-    name: 'Node.js',
-    icon: "https://img.icons8.com/color/150/000000/nodejs.png",
   },
 ]
 const services = [
@@ -227,7 +247,7 @@ const structuredData = {
         "Sunday"
       ],
       "opens": "08:00",
-      "closes": "23:00"
+      "closes": "18:00"
     },
   ],
 }
@@ -395,7 +415,7 @@ export default function Home() {
             </section>
           </article>
           <article id="skills" className={styles.skills}>
-            <h3>Habilidades</h3>
+            <h3>Principais Ferramentas</h3>
             <section>
               {skillsComponent}
               {skillsComponent}
