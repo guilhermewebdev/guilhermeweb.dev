@@ -8,14 +8,6 @@ export const config = { amp: 'hybrid' }
 
 const socials = [
   {
-    name: 'Facebook',
-    link: 'https://www.facebook.com/guilhermeweb.dev',
-  },
-  {
-    name: 'Instagram',
-    link: 'https://instagram.com/guilhermeweb.dev',
-  },
-  {
     name: 'Linkedin',
     link: 'https://www.linkedin.com/in/guilherme-isaías-silva/'
   },
@@ -24,12 +16,8 @@ const socials = [
     link: 'https://github.com/guilhermewebdev'
   },
   {
-    name: 'Twitter',
-    link: 'https://twitter.com/GuilhermeWebDev'
-  },
-  {
-    name: 'Telefone: (32) 9 9198-2237',
-    link: 'tel:32 9 9198 2237'
+    name: 'guilherme@guilhermeweb.dev',
+    link: 'mailto:guilherme@guilhermeweb.dev'
   }
 ]
 const menu = [
