@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useAmp } from 'next/amp'
 import { useEffect, useState } from 'react'
 import { injectGA, facebookPixel, googleTracking } from '../components/analytics';
+import Script from 'next/script'
 export const config = { amp: 'hybrid' }
 
 const socials = [
@@ -300,7 +301,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{name} - Web Developer</title>
+        <title>{`${name} - Web Developer`}</title>
         <link rel="icon" href="/favicon.png" />
         <meta charSet="UTF-8" />
         {!isAmp && <meta name="viewport" content="width=device-width, initial-scale=1.0" />}
@@ -332,7 +333,7 @@ export default function Home() {
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image:alt" content={description} />
         <meta property="twitter:image" content={`${siteUrl}me.png`} />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTracking}`}></script>
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTracking}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
