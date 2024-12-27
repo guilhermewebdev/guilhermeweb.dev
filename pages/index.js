@@ -50,7 +50,7 @@ const about = `Olá, sou Guilherme Isaías, desenvolvedor de software Full-Stack
               Clean Code, integração contínua, entre outros, facilitando a manutenção, escalabilidade 
               e garantindo a estabilidade dos sistemas.
             `
-const occupation = 'Desenvolvedor FullStack na Ubistart'
+const occupation = 'Desenvolvedor FullStack na Ferreri'
 const quote = 'As grandes conquistas da humanidade foram obtidas conversando, e as grandes falhas pela falta de diálogo.'
 const quoteAuthor = 'Stephen Hawking'
 const skills = [
@@ -190,20 +190,8 @@ const portfolio = [
 const contactAction = "https://submit.jotform.com/submit/210254257271651/"
 const contacts = [
   {
-    name: '(32) 9 9198-2237',
-    link: 'tel:3291982237'
-  },
-  {
     name: 'guilherme@guilhermeweb.dev',
     link: 'mailto:guilherme@guilhermeweb.dev',
-  },
-  {
-    name: 'WhatsApp',
-    link: 'https://api.whatsapp.com/send?phone=5532991982237'
-  },
-  {
-    name: 'WhatsApp Web',
-    link: 'https://web.whatsapp.com/send?phone=5532991982237'
   }
 ]
 const FBApp = 223494466159144;
